@@ -94,6 +94,11 @@ namespace tk.supernovaic.MaterialSearchBar.Adapter
             return ItemCount * GetSingleViewHeight();
         }
 
+        public override int GetItemViewType(int position)
+        {
+            return position;
+        }
+
         public virtual void OnBindSuggestionHolder(string suggestion, RecyclerView.ViewHolder holder, int position)
         {
 
@@ -101,10 +106,11 @@ namespace tk.supernovaic.MaterialSearchBar.Adapter
 
         public override int ItemCount => Suggestions.Count;
 
-        public Filter Filter => null;
+        public Filter Filter { get; set; }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
+            holder.IsRecyclable = false;
             OnBindSuggestionHolder(Suggestions[position], holder, position);
         }
 
