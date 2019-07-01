@@ -20,7 +20,9 @@ This beautiful and easy to use library will help to add Lollipop Material Design
 <img src="https://raw.githubusercontent.com/mancj/MaterialSearchBar/master/art/pv4.png" width="400">
 <img src="https://raw.githubusercontent.com/mancj/MaterialSearchBar/master/art/pv5.png" width="400">
 
-**Basic example:**
+***
+
+### Basic example:
 
 **XML:**
 
@@ -91,6 +93,6 @@ public partial class YourClassActivity
 }
 ```
 
-More information:
+For more information you can check the **Wiki**:
 
 https://github.com/FANMixco/Xamarin-SearchBar/wiki
