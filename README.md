@@ -3,7 +3,7 @@ Material Design Search Bar for Android, you can download it from:
 
 https://www.nuget.org/packages/Xamarin-MaterialSearchBar
 
-This version is **based on** of the fantastic version created by:
+This version is **based on** the fantastic version created by:
 
 https://github.com/mancj
 
