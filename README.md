@@ -1,15 +1,10 @@
 # Xamarin-Material SearchBar Android
-Material Design Search Bar for Android, you can download it from:
+Material Design Search Bar for Android. <a href="https://www.nuget.org/packages/Xamarin-MaterialSearchBar"><img src="https://img.shields.io/badge/NuGet-Xamarin--MaterialSearchBar-yellow.svg" /></a>
 
-https://www.nuget.org/packages/Xamarin-MaterialSearchBar
+This version is **based on** the fantastic version created by: <a href="https://github.com/mancj
+">Mansur Nashaev</a>
 
-This version is **based on** the fantastic version created by:
-
-https://github.com/mancj
-
-**The original one:**
-
-https://github.com/mancj/MaterialSearchBar
+**The original one.** <a href="https://github.com/mancj/MaterialSearchBar"><img src="https://img.shields.io/badge/GitHub-MaterialSearchBar-green.svg" /></a>
 
 This beautiful and easy to use library will help to add Lollipop Material Design SearchView in your project.
 
@@ -22,9 +17,17 @@ This beautiful and easy to use library will help to add Lollipop Material Design
 
 ***
 
+### Read the <a href="https://github.com/FANMixco/Xamarin-SearchBar/wiki">Wiki</a> for advanced examples and options.
+
+***
+
+But now, let's go deep into some code!
+
 ### Basic example:
 
-**XML:**
+First to add Xamarin-MaterialSearchBar into your project you need to download the package from <a href="https://www.nuget.org/packages/Xamarin-MaterialSearchBar/">NuGet</a>.
+
+Next editor your XML and add the custom control:
 
 ```xml
 <tk.supernovaic.MaterialSearchBar.MaterialSearchBar
@@ -36,8 +39,7 @@ This beautiful and easy to use library will help to add Lollipop Material Design
 	android:layout_height="wrap_content"
 	android:id="@+id/searchBar" />
 ```
-
-**C#:**
+After that you can edit your activity and add the following piece of code:
 
 ```csharp
 public partial class YourClassActivity : AppCompatActivity, MaterialSearchBar.IOnSearchActionListener
@@ -87,12 +89,8 @@ public partial class YourClassActivity
 
 		public void OnTextChanged(ICharSequence s, int start, int before, int count)
 		{
-
+                       //Here you can execute the query with the texted data.
 		}
 	}
 }
 ```
-
-For more information you can check the **Wiki**:
-
-https://github.com/FANMixco/Xamarin-SearchBar/wiki
