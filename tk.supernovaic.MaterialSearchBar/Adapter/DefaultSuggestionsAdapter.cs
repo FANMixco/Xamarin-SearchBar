@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Android.Support.V7.Widget;
+﻿using Android.Support.V7.Widget;
 using Android.Views;
 
 namespace tk.supernovaic.MaterialSearchBar.Adapter
@@ -7,18 +6,15 @@ namespace tk.supernovaic.MaterialSearchBar.Adapter
     public partial class DefaultSuggestionsAdapter : SuggestionsAdapter
     {
         private static IOnItemViewClickListener Listener;
-        private readonly LayoutInflater Inflater;
-        private static List<string> Suggestions_Clone { get; set; }
+
+        public DefaultSuggestionsAdapter(LayoutInflater inflater) : base(inflater)
+        {
+
+        }
 
         public void SetListener(IOnItemViewClickListener listener)
         {
             Listener = listener;
-        }
-
-        public DefaultSuggestionsAdapter(LayoutInflater inflater) : base(inflater)
-        {
-            Inflater = inflater;
-            Suggestions_Clone = Suggestions;
         }
 
         public override int GetSingleViewHeight()
@@ -29,7 +25,10 @@ namespace tk.supernovaic.MaterialSearchBar.Adapter
         public override void OnBindSuggestionHolder(string suggestion, RecyclerView.ViewHolder holder, int position)
         {
             var h = holder as SuggestionHolder;
-            h.Text.Text = Suggestions[position];
+            if (Suggestions != null)
+            {
+                h.Text.Text = Suggestions[position];
+            }
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

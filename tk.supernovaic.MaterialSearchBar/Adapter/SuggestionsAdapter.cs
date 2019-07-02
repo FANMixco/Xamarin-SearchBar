@@ -7,10 +7,10 @@ namespace tk.supernovaic.MaterialSearchBar.Adapter
 {
     public partial class SuggestionsAdapter : RecyclerView.Adapter, IFilterable
     {
-        private readonly LayoutInflater Inflater;
-        public List<string> Suggestions { get; set; }
-        protected List<string> Suggestions_clone { get; set; }
-        public int MaxSuggestionsCount { get; set; }
+        protected readonly LayoutInflater Inflater;
+        public static List<string> Suggestions { get; set; }
+        protected static List<string> Suggestions_clone { get; set; }
+        public static int MaxSuggestionsCount { get; set; }
 
         public void AddSuggestion(string r)
         {
@@ -72,6 +72,16 @@ namespace tk.supernovaic.MaterialSearchBar.Adapter
         public int GetMaxSuggestionsCount()
         {
             return MaxSuggestionsCount;
+        }
+
+        public List<string> GetSuggestions()
+        {
+            return Suggestions;
+        }
+
+        public void SetMaxSuggestionsCount(int maxSuggestionsCount)
+        {
+            MaxSuggestionsCount = maxSuggestionsCount;
         }
 
         protected LayoutInflater GetLayoutInflater()

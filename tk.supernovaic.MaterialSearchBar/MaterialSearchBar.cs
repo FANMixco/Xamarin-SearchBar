@@ -161,13 +161,16 @@ namespace tk.supernovaic.MaterialSearchBar
                 ((DefaultSuggestionsAdapter)Adapter).SetListener(this);
             }
 
-            Adapter.MaxSuggestionsCount = MaxSuggestionCount;
+            if (Adapter != null)
+            {
+                Adapter.SetMaxSuggestionsCount(MaxSuggestionCount);
 
-            RecyclerView recyclerView = FindViewById<RecyclerView>(Resource.Id.mt_recycler);
-            recyclerView.SetAdapter(Adapter);
-            recyclerView.SetLayoutManager(new LinearLayoutManager(Context));
+                RecyclerView recyclerView = FindViewById<RecyclerView>(Resource.Id.mt_recycler);
+                recyclerView.SetAdapter(Adapter);
+                recyclerView.SetLayoutManager(new LinearLayoutManager(Context));
 
-            array.Recycle();
+                array.Recycle();
+            }
 
             //View References
             SearchBarCardView = FindViewById<CardView>(Resource.Id.mt_container);
@@ -809,7 +812,7 @@ namespace tk.supernovaic.MaterialSearchBar
         public void SetMaxSuggestionCount(int maxSuggestionsCount)
         {
             MaxSuggestionCount = maxSuggestionsCount;
-            Adapter.MaxSuggestionsCount = maxSuggestionsCount;
+            Adapter.SetMaxSuggestionsCount(maxSuggestionsCount);
         }
 
 
@@ -839,7 +842,7 @@ namespace tk.supernovaic.MaterialSearchBar
          */
         public List<string> GetLastSuggestions()
         {
-            return Adapter.Suggestions;
+            return Adapter.GetSuggestions();
         }
 
         /**

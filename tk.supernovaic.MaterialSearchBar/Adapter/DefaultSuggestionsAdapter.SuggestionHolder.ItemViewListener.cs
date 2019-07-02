@@ -10,7 +10,7 @@ namespace tk.supernovaic.MaterialSearchBar.Adapter
             {
                 public void OnClick(View v)
                 {
-                    v.Tag = Suggestions_Clone[AdapterPosition_Clone];
+                    v.Tag = Suggestions[AdapterPosition_Clone];
                     Listener.IOnItemClickListener(AdapterPosition_Clone, v);
                 }
             }
