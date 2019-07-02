@@ -25,10 +25,7 @@ namespace tk.supernovaic.MaterialSearchBar.Adapter
         public override void OnBindSuggestionHolder(string suggestion, RecyclerView.ViewHolder holder, int position)
         {
             var h = holder as SuggestionHolder;
-            if (Suggestions != null)
-            {
-                h.Text.Text = Suggestions[position];
-            }
+            h.Text.Text = Suggestions[position];
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
