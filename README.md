@@ -27,7 +27,7 @@ But now, let's go deep into some code!
 
 First to add Xamarin-MaterialSearchBar into your project you need to download the package from <a href="https://www.nuget.org/packages/Xamarin-MaterialSearchBar/">NuGet</a>.
 
-Next editor your XML and add the custom control:
+Next edit your XML and add the custom control:
 
 ```xml
 <tk.supernovaic.MaterialSearchBar.MaterialSearchBar
