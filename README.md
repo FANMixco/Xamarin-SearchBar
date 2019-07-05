@@ -3,7 +3,7 @@ Material Design Search Bar for Android.
 
 |  Package  |Latest Release|
 |:----------|:------------:|
-|**Xamarin-MaterialSearchBar**|![NuGet Badge Xamarin-MaterialSearchBar](https://buildstats.info/nuget/Xamarin-MaterialSearchBar)|
+|**Xamarin-MaterialSearchBar**|[![NuGet Badge Xamarin-MaterialSearchBar](https://buildstats.info/nuget/Xamarin-MaterialSearchBar)](https://www.nuget.org/packages/Xamarin-MaterialSearchBar/)|
 
 This version is **based on** the fantastic version created by: <a href="https://github.com/mancj
 ">Mansur Nashaev</a>
