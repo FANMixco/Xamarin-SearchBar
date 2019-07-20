@@ -589,17 +589,21 @@ namespace tk.supernovaic.MaterialSearchBar
 
         private void AnimateNavIcon()
         {
-            if (NavIconShown)
+            try
             {
-                NavIcon.SetImageResource(Resource.Drawable.ic_menu_animated);
+                if (NavIconShown)
+                {
+                    NavIcon.SetImageResource(Resource.Drawable.ic_menu_animated);
+                }
+                else
+                {
+                    NavIcon.SetImageResource(Resource.Drawable.ic_back_animated);
+                }
+                var mDrawable = NavIcon.Drawable;
+                ((IAnimatable)mDrawable).Start();
+                NavIconShown = !NavIconShown;
             }
-            else
-            {
-                NavIcon.SetImageResource(Resource.Drawable.ic_back_animated);
-            }
-            var mDrawable = NavIcon.Drawable;
-            ((IAnimatable)mDrawable).Start();
-            NavIconShown = !NavIconShown;
+            catch { }
         }
 
         private void AnimateSuggestions(int from, int to)
