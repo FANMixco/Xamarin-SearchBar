@@ -72,7 +72,8 @@
                 android:layout_toLeftOf="@+id/mt_menu"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:animateLayoutChanges="true">
 
                 <ImageView
                     android:id="@+id/mt_arrow"
@@ -106,7 +107,8 @@
                     android:layout_height="48dp"
                     android:background="?selectableItemBackgroundBorderless"
                     android:padding="12dp"
-                    android:src="@drawable/ic_close_black_48dp" />
+                    android:src="@drawable/ic_close_black_48dp"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 

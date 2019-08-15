@@ -59,6 +59,7 @@
     <Compile Include="Adapter\DefaultSuggestionsAdapter.SuggestionHolder.ItemViewListener.cs" />
     <Compile Include="MaterialSearchBar.SavedState.CredentialsCreator.cs" />
     <Compile Include="Adapter\SuggestionsAdapter.IOnItemViewClickListener.cs" />
+    <Compile Include="MaterialSearchBar.TextWatcherChangeListener.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

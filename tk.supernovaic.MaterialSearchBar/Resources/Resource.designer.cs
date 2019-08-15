@@ -665,47 +665,47 @@ namespace tk.supernovaic.MaterialSearchBar
 			// aapt resource value: 0x7f0100cf
 			public static int measureWithLargestChild = 2130772175;
 			
-			// aapt resource value: 0x7f01012f
-			public static int mt_backIconDrawable = 2130772271;
-			
-			// aapt resource value: 0x7f010134
-			public static int mt_backIconTint = 2130772276;
-			
-			// aapt resource value: 0x7f010139
-			public static int mt_backIconUseTint = 2130772281;
-			
-			// aapt resource value: 0x7f01013b
-			public static int mt_borderlessRippleEnabled = 2130772283;
-			
 			// aapt resource value: 0x7f010130
-			public static int mt_clearIconDrawable = 2130772272;
+			public static int mt_backIconDrawable = 2130772272;
 			
 			// aapt resource value: 0x7f010135
-			public static int mt_clearIconTint = 2130772277;
+			public static int mt_backIconTint = 2130772277;
 			
 			// aapt resource value: 0x7f01013a
-			public static int mt_clearIconUseTint = 2130772282;
+			public static int mt_backIconUseTint = 2130772282;
+			
+			// aapt resource value: 0x7f01013c
+			public static int mt_borderlessRippleEnabled = 2130772284;
+			
+			// aapt resource value: 0x7f010131
+			public static int mt_clearIconDrawable = 2130772273;
+			
+			// aapt resource value: 0x7f010136
+			public static int mt_clearIconTint = 2130772278;
+			
+			// aapt resource value: 0x7f01013b
+			public static int mt_clearIconUseTint = 2130772283;
 			
 			// aapt resource value: 0x7f01012a
 			public static int mt_dividerColor = 2130772266;
 			
-			// aapt resource value: 0x7f010148
-			public static int mt_handlesTintEnabled = 2130772296;
-			
 			// aapt resource value: 0x7f010149
-			public static int mt_highlightedTextColor = 2130772297;
+			public static int mt_handlesTintEnabled = 2130772297;
 			
-			// aapt resource value: 0x7f01013c
-			public static int mt_hint = 2130772284;
+			// aapt resource value: 0x7f01014a
+			public static int mt_highlightedTextColor = 2130772298;
 			
-			// aapt resource value: 0x7f01013f
-			public static int mt_hintColor = 2130772287;
+			// aapt resource value: 0x7f01013d
+			public static int mt_hint = 2130772285;
 			
-			// aapt resource value: 0x7f010142
-			public static int mt_leftTextSelectorDrawable = 2130772290;
+			// aapt resource value: 0x7f010140
+			public static int mt_hintColor = 2130772288;
 			
-			// aapt resource value: 0x7f010145
-			public static int mt_leftTextSelectorTint = 2130772293;
+			// aapt resource value: 0x7f010143
+			public static int mt_leftTextSelectorDrawable = 2130772291;
+			
+			// aapt resource value: 0x7f010146
+			public static int mt_leftTextSelectorTint = 2130772294;
 			
 			// aapt resource value: 0x7f010126
 			public static int mt_maxSuggestionsCount = 2130772262;
@@ -713,41 +713,44 @@ namespace tk.supernovaic.MaterialSearchBar
 			// aapt resource value: 0x7f010129
 			public static int mt_menuDividerEnabled = 2130772265;
 			
+			// aapt resource value: 0x7f01012d
+			public static int mt_menuIconDrawable = 2130772269;
+			
+			// aapt resource value: 0x7f010133
+			public static int mt_menuIconTint = 2130772275;
+			
+			// aapt resource value: 0x7f010138
+			public static int mt_menuIconUseTint = 2130772280;
+			
+			// aapt resource value: 0x7f010144
+			public static int mt_middleTextSelectorDrawable = 2130772292;
+			
+			// aapt resource value: 0x7f010147
+			public static int mt_middleTextSelectorTint = 2130772295;
+			
 			// aapt resource value: 0x7f01012c
-			public static int mt_menuIconDrawable = 2130772268;
-			
-			// aapt resource value: 0x7f010132
-			public static int mt_menuIconTint = 2130772274;
-			
-			// aapt resource value: 0x7f010137
-			public static int mt_menuIconUseTint = 2130772279;
-			
-			// aapt resource value: 0x7f010143
-			public static int mt_middleTextSelectorDrawable = 2130772291;
-			
-			// aapt resource value: 0x7f010146
-			public static int mt_middleTextSelectorTint = 2130772294;
+			public static int mt_navIconDrawable = 2130772268;
 			
 			// aapt resource value: 0x7f010127
 			public static int mt_navIconEnabled = 2130772263;
 			
-			// aapt resource value: 0x7f010131
-			public static int mt_navIconTint = 2130772273;
+			// aapt resource value: 0x7f010132
+			public static int mt_navIconTint = 2130772274;
 			
-			// aapt resource value: 0x7f010136
-			public static int mt_navIconUseTint = 2130772278;
+			// aapt resource value: 0x7f010137
+			public static int mt_navIconUseTint = 2130772279;
 			
-			// aapt resource value: 0x7f01013d
-			public static int mt_placeholder = 2130772285;
+			// aapt resource value: 0x7f01013e
+			public static int mt_placeholder = 2130772286;
 			
-			// aapt resource value: 0x7f010140
-			public static int mt_placeholderColor = 2130772288;
+			// aapt resource value: 0x7f010141
+			public static int mt_placeholderColor = 2130772289;
 			
-			// aapt resource value: 0x7f010144
-			public static int mt_rightTextSelectorDrawable = 2130772292;
+			// aapt resource value: 0x7f010145
+			public static int mt_rightTextSelectorDrawable = 2130772293;
 			
-			// aapt resource value: 0x7f010147
-			public static int mt_rightTextSelectorTint = 2130772295;
+			// aapt resource value: 0x7f010148
+			public static int mt_rightTextSelectorTint = 2130772296;
 			
 			// aapt resource value: 0x7f010128
 			public static int mt_roundedSearchBarEnabled = 2130772264;
@@ -755,26 +758,26 @@ namespace tk.supernovaic.MaterialSearchBar
 			// aapt resource value: 0x7f01012b
 			public static int mt_searchBarColor = 2130772267;
 			
-			// aapt resource value: 0x7f01012d
-			public static int mt_searchIconDrawable = 2130772269;
-			
-			// aapt resource value: 0x7f010133
-			public static int mt_searchIconTint = 2130772275;
-			
-			// aapt resource value: 0x7f010138
-			public static int mt_searchIconUseTint = 2130772280;
-			
 			// aapt resource value: 0x7f01012e
-			public static int mt_speechIconDrawable = 2130772270;
+			public static int mt_searchIconDrawable = 2130772270;
+			
+			// aapt resource value: 0x7f010134
+			public static int mt_searchIconTint = 2130772276;
+			
+			// aapt resource value: 0x7f010139
+			public static int mt_searchIconUseTint = 2130772281;
+			
+			// aapt resource value: 0x7f01012f
+			public static int mt_speechIconDrawable = 2130772271;
 			
 			// aapt resource value: 0x7f010125
 			public static int mt_speechMode = 2130772261;
 			
-			// aapt resource value: 0x7f01013e
-			public static int mt_textColor = 2130772286;
+			// aapt resource value: 0x7f01013f
+			public static int mt_textColor = 2130772287;
 			
-			// aapt resource value: 0x7f010141
-			public static int mt_textCursorTint = 2130772289;
+			// aapt resource value: 0x7f010142
+			public static int mt_textCursorTint = 2130772290;
 			
 			// aapt resource value: 0x7f010038
 			public static int multiChoiceItemLayout = 2130772024;
@@ -5339,49 +5342,50 @@ namespace tk.supernovaic.MaterialSearchBar
 					2130772294,
 					2130772295,
 					2130772296,
-					2130772297};
-			
-			// aapt resource value: 10
-			public static int MaterialSearchBar_mt_backIconDrawable = 10;
-			
-			// aapt resource value: 15
-			public static int MaterialSearchBar_mt_backIconTint = 15;
-			
-			// aapt resource value: 20
-			public static int MaterialSearchBar_mt_backIconUseTint = 20;
-			
-			// aapt resource value: 22
-			public static int MaterialSearchBar_mt_borderlessRippleEnabled = 22;
+					2130772297,
+					2130772298};
 			
 			// aapt resource value: 11
-			public static int MaterialSearchBar_mt_clearIconDrawable = 11;
+			public static int MaterialSearchBar_mt_backIconDrawable = 11;
 			
 			// aapt resource value: 16
-			public static int MaterialSearchBar_mt_clearIconTint = 16;
+			public static int MaterialSearchBar_mt_backIconTint = 16;
 			
 			// aapt resource value: 21
-			public static int MaterialSearchBar_mt_clearIconUseTint = 21;
+			public static int MaterialSearchBar_mt_backIconUseTint = 21;
+			
+			// aapt resource value: 23
+			public static int MaterialSearchBar_mt_borderlessRippleEnabled = 23;
+			
+			// aapt resource value: 12
+			public static int MaterialSearchBar_mt_clearIconDrawable = 12;
+			
+			// aapt resource value: 17
+			public static int MaterialSearchBar_mt_clearIconTint = 17;
+			
+			// aapt resource value: 22
+			public static int MaterialSearchBar_mt_clearIconUseTint = 22;
 			
 			// aapt resource value: 5
 			public static int MaterialSearchBar_mt_dividerColor = 5;
 			
-			// aapt resource value: 35
-			public static int MaterialSearchBar_mt_handlesTintEnabled = 35;
-			
 			// aapt resource value: 36
-			public static int MaterialSearchBar_mt_highlightedTextColor = 36;
+			public static int MaterialSearchBar_mt_handlesTintEnabled = 36;
 			
-			// aapt resource value: 23
-			public static int MaterialSearchBar_mt_hint = 23;
+			// aapt resource value: 37
+			public static int MaterialSearchBar_mt_highlightedTextColor = 37;
 			
-			// aapt resource value: 26
-			public static int MaterialSearchBar_mt_hintColor = 26;
+			// aapt resource value: 24
+			public static int MaterialSearchBar_mt_hint = 24;
 			
-			// aapt resource value: 29
-			public static int MaterialSearchBar_mt_leftTextSelectorDrawable = 29;
+			// aapt resource value: 27
+			public static int MaterialSearchBar_mt_hintColor = 27;
 			
-			// aapt resource value: 32
-			public static int MaterialSearchBar_mt_leftTextSelectorTint = 32;
+			// aapt resource value: 30
+			public static int MaterialSearchBar_mt_leftTextSelectorDrawable = 30;
+			
+			// aapt resource value: 33
+			public static int MaterialSearchBar_mt_leftTextSelectorTint = 33;
 			
 			// aapt resource value: 1
 			public static int MaterialSearchBar_mt_maxSuggestionsCount = 1;
@@ -5389,41 +5393,44 @@ namespace tk.supernovaic.MaterialSearchBar
 			// aapt resource value: 4
 			public static int MaterialSearchBar_mt_menuDividerEnabled = 4;
 			
+			// aapt resource value: 8
+			public static int MaterialSearchBar_mt_menuIconDrawable = 8;
+			
+			// aapt resource value: 14
+			public static int MaterialSearchBar_mt_menuIconTint = 14;
+			
+			// aapt resource value: 19
+			public static int MaterialSearchBar_mt_menuIconUseTint = 19;
+			
+			// aapt resource value: 31
+			public static int MaterialSearchBar_mt_middleTextSelectorDrawable = 31;
+			
+			// aapt resource value: 34
+			public static int MaterialSearchBar_mt_middleTextSelectorTint = 34;
+			
 			// aapt resource value: 7
-			public static int MaterialSearchBar_mt_menuIconDrawable = 7;
-			
-			// aapt resource value: 13
-			public static int MaterialSearchBar_mt_menuIconTint = 13;
-			
-			// aapt resource value: 18
-			public static int MaterialSearchBar_mt_menuIconUseTint = 18;
-			
-			// aapt resource value: 30
-			public static int MaterialSearchBar_mt_middleTextSelectorDrawable = 30;
-			
-			// aapt resource value: 33
-			public static int MaterialSearchBar_mt_middleTextSelectorTint = 33;
+			public static int MaterialSearchBar_mt_navIconDrawable = 7;
 			
 			// aapt resource value: 2
 			public static int MaterialSearchBar_mt_navIconEnabled = 2;
 			
-			// aapt resource value: 12
-			public static int MaterialSearchBar_mt_navIconTint = 12;
+			// aapt resource value: 13
+			public static int MaterialSearchBar_mt_navIconTint = 13;
 			
-			// aapt resource value: 17
-			public static int MaterialSearchBar_mt_navIconUseTint = 17;
+			// aapt resource value: 18
+			public static int MaterialSearchBar_mt_navIconUseTint = 18;
 			
-			// aapt resource value: 24
-			public static int MaterialSearchBar_mt_placeholder = 24;
+			// aapt resource value: 25
+			public static int MaterialSearchBar_mt_placeholder = 25;
 			
-			// aapt resource value: 27
-			public static int MaterialSearchBar_mt_placeholderColor = 27;
+			// aapt resource value: 28
+			public static int MaterialSearchBar_mt_placeholderColor = 28;
 			
-			// aapt resource value: 31
-			public static int MaterialSearchBar_mt_rightTextSelectorDrawable = 31;
+			// aapt resource value: 32
+			public static int MaterialSearchBar_mt_rightTextSelectorDrawable = 32;
 			
-			// aapt resource value: 34
-			public static int MaterialSearchBar_mt_rightTextSelectorTint = 34;
+			// aapt resource value: 35
+			public static int MaterialSearchBar_mt_rightTextSelectorTint = 35;
 			
 			// aapt resource value: 3
 			public static int MaterialSearchBar_mt_roundedSearchBarEnabled = 3;
@@ -5431,26 +5438,26 @@ namespace tk.supernovaic.MaterialSearchBar
 			// aapt resource value: 6
 			public static int MaterialSearchBar_mt_searchBarColor = 6;
 			
-			// aapt resource value: 8
-			public static int MaterialSearchBar_mt_searchIconDrawable = 8;
-			
-			// aapt resource value: 14
-			public static int MaterialSearchBar_mt_searchIconTint = 14;
-			
-			// aapt resource value: 19
-			public static int MaterialSearchBar_mt_searchIconUseTint = 19;
-			
 			// aapt resource value: 9
-			public static int MaterialSearchBar_mt_speechIconDrawable = 9;
+			public static int MaterialSearchBar_mt_searchIconDrawable = 9;
+			
+			// aapt resource value: 15
+			public static int MaterialSearchBar_mt_searchIconTint = 15;
+			
+			// aapt resource value: 20
+			public static int MaterialSearchBar_mt_searchIconUseTint = 20;
+			
+			// aapt resource value: 10
+			public static int MaterialSearchBar_mt_speechIconDrawable = 10;
 			
 			// aapt resource value: 0
 			public static int MaterialSearchBar_mt_speechMode = 0;
 			
-			// aapt resource value: 25
-			public static int MaterialSearchBar_mt_textColor = 25;
+			// aapt resource value: 26
+			public static int MaterialSearchBar_mt_textColor = 26;
 			
-			// aapt resource value: 28
-			public static int MaterialSearchBar_mt_textCursorTint = 28;
+			// aapt resource value: 29
+			public static int MaterialSearchBar_mt_textCursorTint = 29;
 			
 			public static int[] MenuGroup = new int[] {
 					16842766,

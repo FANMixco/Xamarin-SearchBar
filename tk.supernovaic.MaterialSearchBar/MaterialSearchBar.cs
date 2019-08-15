@@ -24,14 +24,22 @@ namespace tk.supernovaic.MaterialSearchBar
     public partial class MaterialSearchBar : RelativeLayout, View.IOnClickListener, Animation.IAnimationListener, IOnItemViewClickListener
     {
         #region properties
-        public const int ButtonSpeech = 1;
-        public const int ButtonNavigation = 2;
-        public const int ButtonBack = 3;
-        public const int ViewVisible = 1;
-        public const int ViewInvisible = 0;
+        public const int BUTTON_SPEECH = 1;
+        public const int BUTTON_NAVIGATION = 2;
+        public const int BUTTON_BACK = 3;
+        public const int VIEW_VISIBLE = 1;
+        public const int VIEW_INVISIBLE = 0;
 
+        //private bool StartupSuggestionList { get; set; } = true;
         private CardView SearchBarCardView { get; set; }
         private LinearLayout InputContainer { get; set; }
+
+        private int NavIconRes { get; set; }
+        private int? NavToBackRes { get; set; }
+        private int? BackToNavRes { get; set; }
+
+        //private int NavIconResId { get; set; }
+
         private ImageView NavIcon { get; set; }
         private ImageView MenuIcon { get; set; }
         private ImageView SearchIcon { get; set; }
@@ -45,12 +53,13 @@ namespace tk.supernovaic.MaterialSearchBar
         public bool IsSearchEnabled { get; set; }
         public bool IsSuggestionsVisible { get; set; }
         public bool IsSuggestionsEnabled = true;
+        private int LastSuggestionHeight { get; set; }
         private static SuggestionsAdapter Adapter { get; set; }
         private float Destiny { get; set; }
 
         public Android.Support.V7.Widget.PopupMenu PopupMenu { get; set; }
 
-        private int NavIconResId { get; set; }
+        //private int NavIconResId { get; set; }
         private int MenuIconRes { get; set; }
         public int SearchIconRes { get; set; }
         private int SpeechIconRes { get; set; }
@@ -128,6 +137,8 @@ namespace tk.supernovaic.MaterialSearchBar
             SearchBarColor = array.GetColor(Resource.Styleable.MaterialSearchBar_mt_searchBarColor, ContextCompat.GetColor(Context, Resource.Color.searchBarPrimaryColor));
 
             //Icon Related Attributes
+            NavIconRes = array.GetResourceId(Resource.Styleable.MaterialSearchBar_mt_navIconDrawable, Resource.Drawable.ic_menu_animated);
+
             MenuIconRes = array.GetResourceId(Resource.Styleable.MaterialSearchBar_mt_menuIconDrawable, Resource.Drawable.ic_dots_vertical_black_48dp);
             SearchIconRes = array.GetResourceId(Resource.Styleable.MaterialSearchBar_mt_searchIconDrawable, Resource.Drawable.ic_magnify_black_48dp);
             SpeechIconRes = array.GetResourceId(Resource.Styleable.MaterialSearchBar_mt_speechIconDrawable, Resource.Drawable.ic_microphone_black_48dp);
@@ -199,7 +210,7 @@ namespace tk.supernovaic.MaterialSearchBar
         {
             if (ListenerExists())
             {
-                OnSearchActionListener.OnButtonClicked(ButtonSpeech);
+                OnSearchActionListener.OnButtonClicked(BUTTON_SPEECH);
             }
         }
 
@@ -351,6 +362,7 @@ namespace tk.supernovaic.MaterialSearchBar
         {
             SetupCursorColor();
             SearchEdit.SetHighlightColor(HighlightedTextColor);
+            SearchEdit.AddTextChangedListener(new TextWatcherChangeListener(this));
 
             if (!string.IsNullOrEmpty(HintText))
             {
@@ -376,10 +388,13 @@ namespace tk.supernovaic.MaterialSearchBar
                 int cursorDrawableRes = field.GetInt(SearchEdit);
                 var cursorDrawable = ContextCompat.GetDrawable(Context, cursorDrawableRes).Mutate();
                 cursorDrawable.SetColorFilter(TextCursorColor, PorterDuff.Mode.SrcIn);
-                Drawable[] drawables = { cursorDrawable, cursorDrawable };
-                field = Class.FromType(typeof(TextView)).GetDeclaredField("mCursorDrawable");
-                field.Accessible = true;
-                field.Set(editor, drawables);
+                //if (Build.VERSION.SdkInt < BuildVersionCodes.P)
+                {
+                    Drawable[] drawables = { cursorDrawable, cursorDrawable };
+                    field = Class.FromType(typeof(TextView)).GetDeclaredField("mCursorDrawable");
+                    field.Accessible = true;
+                    field.Set(editor, drawables);
+                }
             }
             catch (NoSuchFieldException e)
             {
@@ -396,8 +411,11 @@ namespace tk.supernovaic.MaterialSearchBar
         {
             //Drawables
             //Animated Nav Icon
-            NavIconResId = Resource.Drawable.ic_menu_animated;
-            NavIcon.SetImageResource(NavIconResId);
+            //NavIconResId = Resource.Drawable.ic_menu_animated;
+            NavIconRes = Resource.Drawable.ic_menu_animated;
+            NavIcon.SetImageResource(NavIconRes);
+            //NavIconResId = Resource.Drawable.ic_menu_animated;
+            //NavIcon.SetImageResource(NavIconResId);
             SetNavButtonEnabled(NavButtonEnabled);
 
             //Menu
@@ -560,11 +578,17 @@ namespace tk.supernovaic.MaterialSearchBar
             }
         }
 
+        /*public void EnableSearch()
+        {
+            EnableSearch(true);
+        }*/
+
         /**
          * Shows search input and close arrow
          */
-        public void EnableSearch()
+        public void EnableSearch(/*bool startupSuggestionList*/)
         {
+            //StartupSuggestionList = startupSuggestionList;
             if (IsSearchEnabled)
             {
                 OnSearchActionListener.OnSearchStateChanged(true);
@@ -587,23 +611,47 @@ namespace tk.supernovaic.MaterialSearchBar
             SearchIcon.StartAnimation(left_out);
         }
 
+        public void SetNavIcon(int navIconResId, int navToBackId, int backToNavId)
+        {
+            NavIconRes = navIconResId;
+            NavToBackRes = navToBackId;
+            BackToNavRes = backToNavId;
+            NavIcon.SetImageResource(navIconResId);
+        }
+
         private void AnimateNavIcon()
         {
-            try
+            //try
             {
                 if (NavIconShown)
                 {
-                    NavIcon.SetImageResource(Resource.Drawable.ic_menu_animated);
+                    //NavIcon.SetImageResource(Resource.Drawable.ic_menu_animated);
+                    if (NavToBackRes != null)
+                    {
+                        NavIcon.SetImageResource(NavToBackRes.Value);
+                    }
+                    else
+                    {
+                        NavIcon.SetImageResource(Resource.Drawable.ic_menu_animated);
+                    }
                 }
                 else
                 {
-                    NavIcon.SetImageResource(Resource.Drawable.ic_back_animated);
+                    //NavIcon.SetImageResource(Resource.Drawable.ic_back_animated);
+                    if (BackToNavRes != null)
+                    {
+                        NavIcon.SetImageResource(BackToNavRes.Value);
+                    }
+                    else
+                    {
+                        NavIcon.SetImageResource(Resource.Drawable.ic_back_animated);
+                    }
                 }
                 var mDrawable = NavIcon.Drawable;
                 ((IAnimatable)mDrawable).Start();
                 NavIconShown = !NavIconShown;
             }
-            catch { }
+            //catch { }
         }
 
         private void AnimateSuggestions(int from, int to)
@@ -622,11 +670,13 @@ namespace tk.supernovaic.MaterialSearchBar
             {
                 animator.Start();
             }
+            LastSuggestionHeight = to;
         }
 
         public void ShowSuggestionsList()
         {
-            AnimateSuggestions(0, GetListHeight(false));
+            AnimateSuggestions(LastSuggestionHeight, GetListHeight(false));
+            //AnimateSuggestions(0, GetListHeight(false));
         }
 
         public void HideSuggestionsList()
@@ -1068,7 +1118,7 @@ namespace tk.supernovaic.MaterialSearchBar
             {
                 if (ListenerExists())
                 {
-                    OnSearchActionListener.OnButtonClicked(ButtonSpeech);
+                    OnSearchActionListener.OnButtonClicked(BUTTON_SPEECH);
                 }
             }
             else if (id == Resource.Id.mt_clear)
@@ -1085,11 +1135,11 @@ namespace tk.supernovaic.MaterialSearchBar
                 {
                     if (NavIconShown)
                     {
-                        OnSearchActionListener.OnButtonClicked(ButtonNavigation);
+                        OnSearchActionListener.OnButtonClicked(BUTTON_NAVIGATION);
                     }
                     else
                     {
-                        OnSearchActionListener.OnButtonClicked(ButtonBack);
+                        OnSearchActionListener.OnButtonClicked(BUTTON_BACK);
                     }
                 }
             }
@@ -1111,10 +1161,14 @@ namespace tk.supernovaic.MaterialSearchBar
             {
                 SearchIcon.Visibility = ViewStates.Gone;
                 SearchEdit.RequestFocus();
-                if (!IsSuggestionsVisible && IsSuggestionsEnabled)
+                if (!IsSuggestionsVisible && IsSuggestionsEnabled/* && StartupSuggestionList*/)
                 {
                     ShowSuggestionsList();
                 }
+                /*else if (!StartupSuggestionList)
+                {
+                    StartupSuggestionList = true;
+                }*/
             }
         }
 
@@ -1156,10 +1210,11 @@ namespace tk.supernovaic.MaterialSearchBar
         {
             SavedState savedState = new SavedState(base.OnSaveInstanceState())
             {
-                IsSearchBarVisible = IsSearchEnabled ? ViewVisible : ViewInvisible,
-                SuggestionsVisible = IsSuggestionsVisible ? ViewVisible : ViewInvisible,
-                SpeechMode = IsSpeechModeEnabled() ? ViewVisible : ViewInvisible,
-                NavIconResId = NavIconResId,
+                IsSearchBarVisible = IsSearchEnabled ? VIEW_VISIBLE : VIEW_INVISIBLE,
+                SuggestionsVisible = IsSuggestionsVisible ? VIEW_VISIBLE : VIEW_INVISIBLE,
+                SpeechMode = IsSpeechModeEnabled() ? VIEW_VISIBLE : VIEW_INVISIBLE,
+                //NavIconResId = NavIconResId,
+                NavIconResId = NavIconRes,
                 SearchIconRes = SearchIconRes,
                 Suggestions = GetLastSuggestions(),
                 MaxSuggestions = MaxSuggestionCount
@@ -1175,8 +1230,8 @@ namespace tk.supernovaic.MaterialSearchBar
         {
             SavedState savedState = (SavedState)state;
             base.OnRestoreInstanceState(savedState.SuperState);
-            IsSearchEnabled = savedState.IsSearchBarVisible == ViewVisible;
-            IsSuggestionsVisible = savedState.SuggestionsVisible == ViewVisible;
+            IsSearchEnabled = savedState.IsSearchBarVisible == VIEW_VISIBLE;
+            IsSuggestionsVisible = savedState.SuggestionsVisible == VIEW_VISIBLE;
             SetLastSuggestions(savedState.Suggestions);
             if (IsSuggestionsEnabled)
             {
