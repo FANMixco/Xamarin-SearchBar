@@ -23,7 +23,7 @@
 
     </FrameLayout>
 
-    <com.mancj.materialsearchbar.MaterialSearchBar
+    <tk.supernovaic.MaterialSearchBar.MaterialSearchBar
         android:id="@+id/searchBar"
         style="@style/MaterialSearchBarLight"
         android:layout_width="match_parent"
