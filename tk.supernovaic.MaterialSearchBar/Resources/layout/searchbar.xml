@@ -45,7 +45,7 @@
                 android:textColor="@color/searchBarPlaceholderColor"
                 android:textStyle="bold"
                 android:visibility="visible"
-                app:layout_constraintEnd_toStartOf="@id/+mt_search"
+                app:layout_constraintEnd_toStartOf="@+id/mt_search"
                 app:layout_constraintStart_toEndOf="@+id/mt_nav"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_goneMarginStart="16dp"
