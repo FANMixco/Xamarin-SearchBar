@@ -1,6 +1,6 @@
 ﻿using Android.Animation;
 using Android.Views;
-using Android.Widget;
+using AndroidX.RecyclerView.Widget;
 
 namespace tk.supernovaic.MaterialSearchBar
 {
@@ -9,8 +9,8 @@ namespace tk.supernovaic.MaterialSearchBar
         private class AnimatorUpdateListener : Java.Lang.Object, ValueAnimator.IAnimatorUpdateListener
         {
             private readonly ViewGroup.LayoutParams LP;
-            private readonly RelativeLayout Last;
-            public AnimatorUpdateListener(ViewGroup.LayoutParams lp, RelativeLayout last)
+            private readonly RecyclerView Last;
+            public AnimatorUpdateListener(ViewGroup.LayoutParams lp, RecyclerView last)
             {
                 LP = lp;
                 Last = last;

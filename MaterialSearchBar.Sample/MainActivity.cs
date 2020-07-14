@@ -1,13 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Android.App;
+using Android.Bluetooth.LE;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.Design.Widget;
-using Android.Support.V4.View;
-using Android.Support.V4.Widget;
-using Android.Support.V7.App;
 using Android.Views;
+using Android.Widget;
+using AndroidX.AppCompat.App;
+using AndroidX.Core.View;
+using AndroidX.DrawerLayout.Widget;
+using Google.Android.Material.FloatingActionButton;
+using Google.Android.Material.Navigation;
 using static MaterialSearchBar.Sample.MainActivity.CustomSuggestionsAdapter;
 
 namespace MaterialSearchBar.Sample
@@ -20,7 +23,7 @@ namespace MaterialSearchBar.Sample
 
         private static CustomSuggestionsAdapter CustomSuggestionsAdapterPreview { get; set; }
 
-        private List<Product> Products = new List<Product>() {
+        private readonly List<Product> Products = new List<Product>() {
             new Product("Simvastatin", "Red"),
             new Product("Carrot Daucus carota", "Orange"),
             new Product("Sodium Fluoride", "Orange"),
@@ -76,7 +79,8 @@ namespace MaterialSearchBar.Sample
             }
             catch (System.Exception ex)
             {
-                System.Console.WriteLine(ex);
+                Toast.MakeText(this, ex.GetBaseException().Message, ToastLength.Long);
+                //System.Console.WriteLine(ex);
             }
         }
 

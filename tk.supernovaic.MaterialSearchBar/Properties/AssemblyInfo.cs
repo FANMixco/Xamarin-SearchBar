@@ -11,7 +11,7 @@ using Android.App;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("tk.supernovaic.MaterialSearchBar")]
-[assembly: AssemblyCopyright("© Copyright Supernova IC 2019")]
+[assembly: AssemblyCopyright("© Copyright Supernova IC 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
