@@ -1094,13 +1094,14 @@ namespace tk.supernovaic.MaterialSearchBar
             }
             else if (id == Resource.Id.mt_nav)
             {
+                int button = IsSearchEnabled ? BUTTON_BACK : BUTTON_NAVIGATION;
                 if (IsSearchEnabled)
                 {
                     DisableSearch();
                 }
                 if (ListenerExists())
                 {
-                    OnSearchActionListener.OnButtonClicked(IsSearchEnabled ? BUTTON_BACK : BUTTON_NAVIGATION);
+                    OnSearchActionListener.OnButtonClicked(button);
                 }
             }
         }
