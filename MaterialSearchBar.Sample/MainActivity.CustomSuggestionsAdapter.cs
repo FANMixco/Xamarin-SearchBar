@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Android.Support.V7.Widget;
 using Android.Views;
+using AndroidX.RecyclerView.Widget;
 using tk.supernovaic.MaterialSearchBar.Adapter;
 
 namespace MaterialSearchBar.Sample

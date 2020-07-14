@@ -1,6 +1,7 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30223.230
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tk.supernovaic.MaterialSearchBar", "tk.supernovaic.MaterialSearchBar\tk.supernovaic.MaterialSearchBar.csproj", "{3453871F-7100-470C-9941-E9D6E2339AA0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialSearchBar.Sample", "MaterialSearchBar.Sample\MaterialSearchBar.Sample.csproj", "{5002E7D6-A6B5-4C05-94B4-7F98F7027174}"
@@ -19,6 +20,12 @@ Global
 		{5002E7D6-A6B5-4C05-94B4-7F98F7027174}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5002E7D6-A6B5-4C05-94B4-7F98F7027174}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5002E7D6-A6B5-4C05-94B4-7F98F7027174}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E812FD31-4FE4-4FE2-99AC-33444ED0AE06}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		description = @Material Design Search Bar for Android\nThis beautiful and easy to use library will help to add Lollipop Material Design SearchView in your project.
