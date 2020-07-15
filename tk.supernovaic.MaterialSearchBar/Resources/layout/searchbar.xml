@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="ContentDescription">
@@ -44,7 +45,7 @@
                 android:textColor="@color/searchBarPlaceholderColor"
                 android:textStyle="bold"
                 android:visibility="visible"
-                app:layout_constraintEnd_toStartOf="@id/mt_search"
+                app:layout_constraintEnd_toStartOf="@+id/mt_search"
                 app:layout_constraintStart_toEndOf="@+id/mt_nav"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_goneMarginStart="16dp"
@@ -108,7 +109,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_menu_black_24dp" />
-
 
             <RelativeLayout
                 android:id="@+id/last"
