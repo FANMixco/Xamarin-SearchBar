@@ -30,7 +30,6 @@ namespace tk.supernovaic.MaterialSearchBar
                 SearchIconRes = source.ReadInt();
                 Hint = source.ReadString();
                 Suggestions = source.ReadArrayList(Class.ClassLoader) as List<string>;
-                //Suggestions = source.ReadArrayList(null) as List<string>;
                 MaxSuggestions = source.ReadInt();
             }
 

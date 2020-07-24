@@ -65,6 +65,7 @@ namespace tk.supernovaic.MaterialSearchBar
 
         private bool SpeechMode { get; set; }
         private int MaxSuggestionCount { get; set; }
+        private int SuggestionAnimationSpeed { get; set; }
         private bool NavButtonEnabled { get; set; }
         private bool RoundedSearchBarEnabled { get; set; }
         private Color DividerColor { get; set; }
@@ -127,6 +128,7 @@ namespace tk.supernovaic.MaterialSearchBar
             RoundedSearchBarEnabled = array.GetBoolean(Resource.Styleable.MaterialSearchBar_mt_roundedSearchBarEnabled, false);
             DividerColor = array.GetColor(Resource.Styleable.MaterialSearchBar_mt_dividerColor, ContextCompat.GetColor(Context, Resource.Color.searchBarDividerColor));
             SearchBarColor = array.GetColor(Resource.Styleable.MaterialSearchBar_mt_searchBarColor, ContextCompat.GetColor(Context, Resource.Color.searchBarPrimaryColor));
+            SuggestionAnimationSpeed = array.GetInteger(Resource.Styleable.MaterialSearchBar_mt_suggestionsAnimationSpeed, 1200);
 
             //Icon Related Attributes
             NavIconRes = array.GetResourceId(Resource.Styleable.MaterialSearchBar_mt_navIconDrawable, Resource.Drawable.ic_menu_animated);
@@ -638,7 +640,7 @@ namespace tk.supernovaic.MaterialSearchBar
             FindViewById(Resource.Id.mt_divider).Visibility = to > 0 ? ViewStates.Visible : ViewStates.Gone;
 
             ValueAnimator animator = ValueAnimator.OfInt(from, to);
-            animator.SetDuration(1200);
+            animator.SetDuration(SuggestionAnimationSpeed);
             animator.AddUpdateListener(new AnimatorUpdateListener(lp, suggestionsList));
             if (Adapter.ItemCount > 0)
             {
