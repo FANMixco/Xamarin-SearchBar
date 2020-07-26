@@ -6,7 +6,7 @@ namespace tk.supernovaic.MaterialSearchBar
 {
     public partial class MaterialSearchBar
     {
-        private class TextWatcherChangeListener : Java.Lang.Object, ITextWatcher
+        private class TextWatcherChangeListener : Object, ITextWatcher
         {
             private MaterialSearchBar MSearchBar { get; set; }
             public TextWatcherChangeListener(MaterialSearchBar mSearchBar)
