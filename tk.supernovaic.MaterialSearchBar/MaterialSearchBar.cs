@@ -621,8 +621,10 @@ namespace tk.supernovaic.MaterialSearchBar
                     NavIcon.SetImageResource(Resource.Drawable.ic_back_animated);
                 }
             }
-            var mDrawable = NavIcon.Drawable;
-            ((IAnimatable)mDrawable).Start();
+            if (NavIcon.Drawable is IAnimatable a)
+            {
+                a.Start();
+            }
         }
 
         private void AnimateSuggestions(int from, int to)
