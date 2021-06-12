@@ -153,9 +153,14 @@ namespace tk.supernovaic.MaterialSearchBar
             //Text Related Attributes
             HintText = array.GetString(Resource.Styleable.MaterialSearchBar_mt_hint);
             PlaceholderText = array.GetString(Resource.Styleable.MaterialSearchBar_mt_placeholder);
-            TextColor = Context.GetColorStateList(Resource.Color.searchBarTextColor);
-            HintColor = Context.GetColorStateList(Resource.Color.searchBarHintColor);
-            PlaceholderColor = Context.GetColorStateList(Resource.Color.searchBarPlaceholderColor);
+
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.M)
+            {
+                TextColor = Context.GetColorStateList(Resource.Color.searchBarTextColor);
+                HintColor = Context.GetColorStateList(Resource.Color.searchBarHintColor);
+                PlaceholderColor = Context.GetColorStateList(Resource.Color.searchBarPlaceholderColor);
+            }
+
             TextCursorColor = array.GetColor(Resource.Styleable.MaterialSearchBar_mt_textCursorTint, ContextCompat.GetColor(Context, Resource.Color.searchBarCursorColor));
             HighlightedTextColor = array.GetColor(Resource.Styleable.MaterialSearchBar_mt_highlightedTextColor, ContextCompat.GetColor(Context, Resource.Color.searchBarTextHighlightColor));
 
@@ -303,7 +308,8 @@ namespace tk.supernovaic.MaterialSearchBar
 
         private void PostSetup()
         {
-            SetupTextColors();
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.M)
+                SetupTextColors();
             SetupRoundedSearchBarEnabled();
             SetupSearchBarColor();
             SetupIcons();
@@ -339,9 +345,12 @@ namespace tk.supernovaic.MaterialSearchBar
 
         private void SetupTextColors()
         {
-            SearchEdit.SetHintTextColor(HintColor);
-            SearchEdit.SetTextColor(TextColor);
-            PlaceHolder.SetTextColor(PlaceholderColor);
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.M)
+            {
+                SearchEdit.SetHintTextColor(HintColor);
+                SearchEdit.SetTextColor(TextColor);
+                PlaceHolder.SetTextColor(PlaceholderColor);
+            }
         }
 
         /**

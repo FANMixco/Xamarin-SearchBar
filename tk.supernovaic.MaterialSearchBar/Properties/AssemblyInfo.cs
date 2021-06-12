@@ -11,9 +11,9 @@ using Android.App;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Supernova IC")]
 [assembly: AssemblyProduct("tk.supernovaic.MaterialSearchBar")]
-[assembly: AssemblyCopyright("© Copyright Supernova IC 2020")]
+[assembly: AssemblyCopyright("© Copyright Supernova IC 2021")]
 [assembly: AssemblyTrademark("Supernova IC")]
-[assembly: AssemblyCulture("en")]
+[assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 
 // Version information for an assembly consists of the following four values:
@@ -26,5 +26,5 @@ using Android.App;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.0.0")]
-[assembly: AssemblyFileVersion("2.0.0.0")]
+[assembly: AssemblyVersion("2.1.0.0")]
+[assembly: AssemblyFileVersion("2.1.0.0")]

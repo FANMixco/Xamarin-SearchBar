@@ -14,7 +14,7 @@ namespace tk.supernovaic.MaterialSearchBar.Adapter
 
             public SuggestionHolder(View itemView) : base(itemView)
             {
-                AdapterPosition_Clone = AdapterPosition;
+                AdapterPosition_Clone = AbsoluteAdapterPosition;
                 Text = itemView.FindViewById<TextView>(Resource.Id.text);
                 Iv_delete = itemView.FindViewById<ImageView>(Resource.Id.iv_delete);
 
