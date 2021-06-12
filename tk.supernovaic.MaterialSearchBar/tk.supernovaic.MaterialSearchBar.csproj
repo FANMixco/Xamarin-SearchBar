@@ -76,7 +76,6 @@
     <PackageReference Include="Xamarin.AndroidX.CardView">
       <Version>1.0.0.8</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.8" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\strings.xml" />
