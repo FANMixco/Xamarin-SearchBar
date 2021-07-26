@@ -128,6 +128,7 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/mt_recycler"
+                    android:paddingBottom="?attr/actionBarSize"
                     android:layout_width="match_parent"
                     android:layout_height="0dp" />
 

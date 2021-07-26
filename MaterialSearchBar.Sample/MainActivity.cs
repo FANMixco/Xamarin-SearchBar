@@ -80,7 +80,6 @@ namespace MaterialSearchBar.Sample
             catch (System.Exception ex)
             {
                 Toast.MakeText(this, ex.GetBaseException().Message, ToastLength.Long);
-                //System.Console.WriteLine(ex);
             }
         }
 
