@@ -61,6 +61,7 @@
     <Compile Include="MaterialSearchBar.SavedState.CredentialsCreator.cs" />
     <Compile Include="Adapter\SuggestionsAdapter.IOnItemViewClickListener.cs" />
     <Compile Include="MaterialSearchBar.TextWatcherChangeListener.cs" />
+    <Compile Include="AccentRemover.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

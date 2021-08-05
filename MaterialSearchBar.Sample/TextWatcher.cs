@@ -6,7 +6,7 @@ namespace MaterialSearchBar.Sample
 {
     internal class TextWatcher : Object, ITextWatcher
     {
-        private MainActivity context;
+        private readonly MainActivity context;
         private tk.supernovaic.MaterialSearchBar.MaterialSearchBar SearchBar;
 
         public TextWatcher(MainActivity context)

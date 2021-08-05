@@ -18,6 +18,7 @@ namespace tk.supernovaic.MaterialSearchBar
 
             public SavedState(IParcelable superState) : base(superState)
             {
+
             }
 
             public SavedState(Parcel source) : base(source)

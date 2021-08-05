@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace tk.supernovaic.MaterialSearchBar
+﻿namespace tk.supernovaic.MaterialSearchBar
 {
     public class SimpleOnSearchActionListener : MaterialSearchBar.IOnSearchActionListener
     {

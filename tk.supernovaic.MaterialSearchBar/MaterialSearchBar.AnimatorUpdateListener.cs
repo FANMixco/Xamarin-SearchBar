@@ -10,11 +10,13 @@ namespace tk.supernovaic.MaterialSearchBar
         {
             private readonly ViewGroup.LayoutParams LP;
             private readonly RecyclerView Last;
+
             public AnimatorUpdateListener(ViewGroup.LayoutParams lp, RecyclerView last)
             {
                 LP = lp;
                 Last = last;
             }
+
             public void OnAnimationUpdate(ValueAnimator animation)
             {
                 LP.Height = (int)animation.AnimatedValue;

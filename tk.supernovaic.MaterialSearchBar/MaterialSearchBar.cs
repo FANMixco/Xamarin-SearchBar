@@ -46,6 +46,7 @@ namespace tk.supernovaic.MaterialSearchBar
         public EditText SearchEdit { get; set; }
         public TextView PlaceHolder { get; set; }
         private View SuggestionDivider { get; set; }
+        public IOnFocusChangeListener OnFocusChangeListener { get; set; }
 
         private IOnSearchActionListener OnSearchActionListener { get; set; }
         public bool IsSearchEnabled { get; set; }
@@ -91,6 +92,8 @@ namespace tk.supernovaic.MaterialSearchBar
 
         public Color TextCursorColor { get; set; }
         public Color HighlightedTextColor { get; set; }
+
+        public bool RemoveAccents { get; set; } = false;
         #endregion
 
         #region constructors
@@ -201,6 +204,11 @@ namespace tk.supernovaic.MaterialSearchBar
             SearchEdit.EditorAction += SearchEdit_EditorAction;
             NavIcon.SetOnClickListener(this);
 
+            if (OnFocusChangeListener != null)
+            {
+                OnFocusChangeListener.OnFocusChange(this, HasFocus);
+            }
+
             PostSetup();
         }
 
@@ -222,11 +230,16 @@ namespace tk.supernovaic.MaterialSearchBar
             SearchEdit.Text = "";
         }
 
+        public void SetOnFocusChangeListener(IOnFocusChangeListener listener)
+        {
+            OnFocusChangeListener = listener;
+        }
+
         private void SearchEdit_EditorAction(object sender, TextView.EditorActionEventArgs e)
         {
             if (ListenerExists())
             {
-                OnSearchActionListener.OnSearchConfirmed(SearchEdit.Text);
+                OnSearchActionListener.OnSearchConfirmed(!RemoveAccents ? SearchEdit.Text : SearchEdit.Text.RemoveDiacritics());
             }
             if (IsSuggestionsVisible)
             {
@@ -234,7 +247,7 @@ namespace tk.supernovaic.MaterialSearchBar
             }
             if (Adapter.GetType() == typeof(DefaultSuggestionsAdapter))
             {
-                Adapter.AddSuggestion(SearchEdit.Text);
+                Adapter.AddSuggestion(!RemoveAccents ? SearchEdit.Text : SearchEdit.Text.RemoveDiacritics());
             }
         }
 
@@ -243,16 +256,16 @@ namespace tk.supernovaic.MaterialSearchBar
             InputMethodManager imm = (InputMethodManager)Context.GetSystemService(Context.InputMethodService);
             if (e.HasFocus)
             {
-                if (Build.VERSION.SdkInt >= BuildVersionCodes.N)
-                {
-                    imm.ShowSoftInput(SearchEdit, ShowFlags.Implicit);
-                }
+                /*if (Build.VERSION.SdkInt >= BuildVersionCodes.N)
+                {*/
+                imm.ShowSoftInput(SearchEdit, ShowFlags.Implicit);
+                /*}
                 else
                 {
 #pragma warning disable CS0618 // Type or member is obsolete
                     imm.ShowSoftInput(SearchEdit, ShowFlags.Implicit);
 #pragma warning restore CS0618 // Type or member is obsolete
-                }
+                }*/
             }
             else
             {
@@ -309,7 +322,10 @@ namespace tk.supernovaic.MaterialSearchBar
         private void PostSetup()
         {
             if (Build.VERSION.SdkInt >= BuildVersionCodes.M)
+            {
                 SetupTextColors();
+            }
+
             SetupRoundedSearchBarEnabled();
             SetupSearchBarColor();
             SetupIcons();
@@ -526,10 +542,10 @@ namespace tk.supernovaic.MaterialSearchBar
                 ArrowIcon.SetBackgroundResource(rippleStyle.ResourceId);
                 ClearIcon.SetBackgroundResource(rippleStyle.ResourceId);
             }
-            else
+            /*else
             {
                 Console.WriteLine("setupIconRippleStyle() Only Available On SDK Versions Higher Than 16!");
-            }
+            }*/
         }
 
         /**
@@ -846,7 +862,6 @@ namespace tk.supernovaic.MaterialSearchBar
             Adapter.SetMaxSuggestionsCount(maxSuggestionsCount);
         }
 
-
         /**
          * Sets a custom adapter for suggestions list view.
          *
@@ -1058,7 +1073,6 @@ namespace tk.supernovaic.MaterialSearchBar
         {
             return SearchEdit;
         }
-
 
         /**
          * Set the place holder text
