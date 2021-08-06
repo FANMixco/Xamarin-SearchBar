@@ -393,32 +393,57 @@ namespace tk.supernovaic.MaterialSearchBar
         {
             try
             {
-                var field = Class.FromType(typeof(TextView)).GetDeclaredField("mEditor");
-                field.Accessible = true;
-                var editor = field.Get(SearchEdit);
-
-                field = Class.FromType(typeof(TextView)).GetDeclaredField("mCursorDrawableRes");
-                field.Accessible = true;
-                int cursorDrawableRes = field.GetInt(SearchEdit);
-                var cursorDrawable = ContextCompat.GetDrawable(Context, cursorDrawableRes).Mutate();
-
                 if (Build.VERSION.SdkInt >= BuildVersionCodes.Q)
                 {
-                    cursorDrawable.SetColorFilter(new BlendModeColorFilter(TextCursorColor, BlendMode.SrcIn));
+                    if (SearchEdit.TextCursorDrawable is InsetDrawable)
+                    {
+                        InsetDrawable insetDrawable = (InsetDrawable)SearchEdit.TextCursorDrawable;
+                        insetDrawable.SetColorFilter(new BlendModeColorFilter(TextCursorColor, BlendMode.SrcIn));
+                        SearchEdit.TextCursorDrawable = insetDrawable;
+                    }
+
+                    else if (SearchEdit.TextCursorDrawable is BitmapDrawable)
+                    {
+                        BitmapDrawable insetDrawable = (BitmapDrawable)SearchEdit.TextSelectHandle;
+                        insetDrawable.SetColorFilter(new BlendModeColorFilter(TextCursorColor, BlendMode.SrcIn));
+                        SearchEdit.TextSelectHandle = insetDrawable;
+                    }
+
+                    else if (SearchEdit.TextCursorDrawable is BitmapDrawable)
+                    {
+                        BitmapDrawable insetDrawable = (BitmapDrawable)SearchEdit.TextSelectHandleRight;
+                        insetDrawable.SetColorFilter(new BlendModeColorFilter(TextCursorColor, BlendMode.SrcIn));
+                        SearchEdit.TextSelectHandleRight = insetDrawable;
+                    }
+
+                    else if (SearchEdit.TextCursorDrawable is BitmapDrawable)
+                    {
+                        BitmapDrawable insetDrawable = (BitmapDrawable)SearchEdit.TextSelectHandleLeft;
+                        insetDrawable.SetColorFilter(new BlendModeColorFilter(TextCursorColor, BlendMode.SrcIn));
+                        SearchEdit.TextSelectHandleLeft = insetDrawable;
+                    }
                 }
                 else
                 {
+                    var field = Class.FromType(typeof(TextView)).GetDeclaredField("mEditor");
+                    field.Accessible = true;
+                    var editor = field.Get(SearchEdit);
+
+                    field = Class.FromType(typeof(TextView)).GetDeclaredField("mCursorDrawableRes");
+                    field.Accessible = true;
+                    int cursorDrawableRes = field.GetInt(SearchEdit);
+                    var cursorDrawable = ContextCompat.GetDrawable(Context, cursorDrawableRes).Mutate();
 
 #pragma warning disable CS0618 // Type or member is obsolete
                     cursorDrawable.SetColorFilter(TextCursorColor, PorterDuff.Mode.SrcIn);
 
 #pragma warning restore CS0618 // Type or member is obsolete
-                }
 
-                Drawable[] drawables = { cursorDrawable, cursorDrawable };
-                field = Class.FromType(typeof(TextView)).GetDeclaredField("mCursorDrawable");
-                field.Accessible = true;
-                field.Set(editor, drawables);
+                    Drawable[] drawables = { cursorDrawable, cursorDrawable };
+                    field = Class.FromType(typeof(TextView)).GetDeclaredField("mCursorDrawable");
+                    field.Accessible = true;
+                    field.Set(editor, drawables);
+                }
             }
             catch (NoSuchFieldException e)
             {
@@ -646,7 +671,7 @@ namespace tk.supernovaic.MaterialSearchBar
                     NavIcon.SetImageResource(Resource.Drawable.ic_back_animated);
                 }
             }
-            if (NavIcon.Drawable is IAnimatable a)
+            if (NavIcon.Drawable is AnimatedVectorDrawable a)
             {
                 a.Start();
             }

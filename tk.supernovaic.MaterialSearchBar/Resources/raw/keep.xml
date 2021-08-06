@@ -1,0 +1,3 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@anim/fade_in_left,@anim/fade_in_right,@anim/fade_out,@anim/fade_out_left,@animator/back_to_menu_morph,@animator/back_to_menu_rotation,@animator/menu_to_back_morph,@animator/menu_to_back_rotation" />
