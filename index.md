@@ -1,5 +1,5 @@
 <a href="https://github.com/sponsors/FANMixco/" target="_blank">
-   <img src="https://i.stack.imgur.com/zoyl1.png" alt="sponsor" />
+   <img src="https://raw.githubusercontent.com/FANMixco/Xamarin-SearchBar/master/bmc-rezr5vpd.gif" alt="sponsor" />
 </a>
 
 ## Get it
