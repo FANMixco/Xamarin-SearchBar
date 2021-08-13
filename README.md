@@ -1,6 +1,6 @@
-![preview](https://raw.githubusercontent.com/FANMixco/Xamarin-SearchBar/master/bmc-rezr5vpd.gif)
-
-https://github.com/sponsors/FANMixco
+<a href="https://github.com/sponsors/FANMixco/" target="_blank">
+   <img src="https://raw.githubusercontent.com/FANMixco/Xamarin-SearchBar/master/bmc-rezr5vpd.gif" alt="sponsor" />
+</a>
 
 # Xamarin-Material SearchBar Android
 Material Design Search Bar for Android.
