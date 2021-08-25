@@ -5,6 +5,8 @@
 # Xamarin-Material SearchBar Android
 Material Design Search Bar for Android.
 
+[![.NET](https://github.com/FANMixco/Xamarin-SearchBar/actions/workflows/dotnet.yml/badge.svg)](https://github.com/FANMixco/Xamarin-SearchBar/actions/workflows/dotnet.yml)
+
 |  Package  |Latest Release|
 |:----------|:------------:|
 |**Xamarin-MaterialSearchBar**|[![NuGet Badge Xamarin-MaterialSearchBar](https://buildstats.info/nuget/Xamarin-MaterialSearchBar)](https://www.nuget.org/packages/Xamarin-MaterialSearchBar/)|
@@ -12,7 +14,7 @@ Material Design Search Bar for Android.
 This version is **based on** the fantastic version created by: <a href="https://github.com/mancj
 ">Mansur Nashaev</a>
 
-**The original one.** <a href="https://github.com/mancj/MaterialSearchBar"><img src="https://img.shields.io/badge/GitHub-MaterialSearchBar-green.svg" /></a>
+**The original one:** <a href="https://github.com/mancj/MaterialSearchBar"><img src="https://img.shields.io/badge/GitHub-MaterialSearchBar-green.svg" /></a>
 
 This beautiful and easy to use library will help to add Lollipop Material Design SearchView in your project.
 
