@@ -13,18 +13,10 @@ jobs:
     steps:
       - name: Install Mono
         run: brew install mono
-        # You can replace 'brew install mono' with the appropriate installation method for Mono on macOS.
+        # Replace with the appropriate installation method for Mono on macOS.
 
       - name: Install Xamarin.Android
         run: brew install --cask xamarin-android
         # Replace with the correct installation command for Xamarin.Android.
-
-      - name: Set Xamarin.iOS version
-        run: sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 13.0.0.47
-        # Replace '13.0.0.47' with the desired Xamarin.iOS version.
-
-      - name: Set Xamarin.Mac version
-        run: sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6.12.0.140
-        # Replace '6.12.0.140' with the desired Xamarin.Mac version.
 
       # Add your build and test steps here
