@@ -7,9 +7,9 @@ Material Design Search Bar for Android.
 
 [![.NET](https://github.com/FANMixco/Xamarin-SearchBar/actions/workflows/dotnet.yml/badge.svg)](https://github.com/FANMixco/Xamarin-SearchBar/actions/workflows/dotnet.yml)
 
-|  Package  |Latest Release|
-|:----------|:------------:|
-|**Xamarin-MaterialSearchBar**|[![NuGet Badge Xamarin-MaterialSearchBar](https://buildstats.info/nuget/Xamarin-MaterialSearchBar)](https://www.nuget.org/packages/Xamarin-MaterialSearchBar/)|
+|  Package  |Latest Release|Downloads|
+|:----------|:------------:|:------------:|
+|**Xamarin-MaterialSearchBar**|[![NuGet Badge Xamarin-MaterialSearchBar](https://img.shields.io/nuget/v/Xamarin-MaterialSearchBar)](https://www.nuget.org/packages/Xamarin-MaterialSearchBar/)|[![NuGet Badge SpotsDialog.Xamarin](https://img.shields.io/nuget/dt/Xamarin-MaterialSearchBar)](https://www.nuget.org/packages/Xamarin-MaterialSearchBar/)|
 
 This version is **based on** the fantastic version created by: <a href="https://github.com/mancj
 ">Mansur Nashaev</a>
